@@ -82,7 +82,9 @@ To prepare the input of fuzzing, one needs to provide a Truffle project (formatt
 
 ```
 $ rm example/crowdsale/transactions.json
-$ python3 script/extract.py --proj example/crowdsale/ --port 8545
+```
+```
+$ python3 script/extract.py --proj example/crowdsale/ --port 8545 --fuzz_contract Crowdsale
 ```
 Note that you need to kill existing ganache-cli processes listening the same port before calling this script.
 
@@ -90,24 +92,4 @@ Note that you need to kill existing ganache-cli processes listening the same por
 
 ```
 python3 -m rlf --proj example/crowdsale/ --contract Crowdsale --fuzzer reinforcement --limit 2000 --reward cov+bugs --mode test
-```
-
-### Citing RLF
-```
-@inproceedings{10.1145/3551349.3560429,
-author = {Su, Jianzhong and Dai, Hong-Ning and Zhao, Lingjun and Zheng, Zibin and Luo, Xiapu},
-title = {Effectively Generating Vulnerable Transaction Sequences in Smart Contracts with Reinforcement Learning-Guided Fuzzing},
-year = {2023},
-isbn = {9781450394758},
-publisher = {Association for Computing Machinery},
-address = {New York, NY, USA},
-url = {https://doi.org/10.1145/3551349.3560429},
-doi = {10.1145/3551349.3560429},
-booktitle = {Proceedings of the 37th IEEE/ACM International Conference on Automated Software Engineering},
-articleno = {36},
-numpages = {12},
-keywords = {Fuzzing, Smart contract, Reinforcement learning},
-location = {Rochester, MI, USA},
-series = {ASE '22}
-}
 ```
