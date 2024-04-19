@@ -81,10 +81,10 @@ $ sudo mv solc-static-linux /usr/bin/solc
 To prepare the input of fuzzing, one needs to provide a Truffle project (formatted as the example in "example/crowdsale"). Then the script "script/extract.py" should be called to extract deployment transactions of the contracts. For the example contract, the script runs as follows:
 
 ```
-$ rm example/crowdsale/transactions.json
+rm example/crowdsale/transactions.json
 ```
 ```
-$ python3 script/extract.py --proj example/crowdsale/ --port 8545 --fuzz_contract Crowdsale
+python3 script/extract.py --proj example/crowdsale/ --port 8545 --fuzz_contract Crowdsale
 ```
 Note that you need to kill existing ganache-cli processes listening the same port before calling this script.
 
